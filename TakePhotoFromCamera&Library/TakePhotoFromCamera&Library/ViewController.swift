@@ -9,11 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var imgPhoto: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
-
+    @IBAction func btnTakePhoto(_ sender: UIButton) {
+        showPhotoAlert()
+    }
+    
+    func showPhotoAlert() {
+        let alert = UIAlertController(title: "Take Photo From", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { action in
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Photo Librery", style: .default, handler: { action in
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }
 
